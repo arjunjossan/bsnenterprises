@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/teams.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<div class='bgimage'>
+
+<section style="padding-top:119px" class="team-section">
+    <p class="h4 color fw-bold">OUR PERFECT TEAM</p>
+    <center><p class="color mb-4 pb-2 mb-md-5 pb-md-0 w-50">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
+      numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum
+      quisquam eum porro a pariatur veniam.
+    </p></center>
+  
+    <div class="team-container">
+  
+      <!-- Team Member -->
+      {% for d in teamData %}
+      <div class="team-member color">
+        <img src="{{d.team_pic}}" alt="Team Member" class="member-img">
+        <div class="member-info">
+          <h3>{{d.team_name}}</h3>
+          <p class="member-role color">{{d.team_field}}</p>
+          <p class="member-desc">{{d.team_desc | safe}}</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+
+
+
+
+  
+
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

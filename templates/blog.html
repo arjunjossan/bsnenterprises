@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogs</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/blog.css">
+
+</head>
+<body style="padding-top:100px" class="bg-blue-50   design">
+
+  <div class="container mt-5">
+    {% for m in mainblogData %}
+      <div class="row card-custom bg-white p-0">
+    <!-- Image and Tags -->
+      <div class="col-md-6 image-box position-relative">
+        <img src="{{m.main_blog_img}}" alt="POS System" class="w-100 h-100">
+    </div>
+
+    <!-- Content -->
+    <div class="col-md-6 p-4 content-box">
+      <div class="d-flex align-items-center mb-2">
+        <span class="badge-news">{{m.main_blog_news}}!</span>
+        <span class="text-muted small">8 mins read</span>
+      </div>
+      <h3 class="fw-bold">{{m.main_blog_title}}</h3>
+      <p class="text-muted mt-3">{{m.main_blog_desc | safe}}</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+  </div>
+  {% endfor %}
+
+  </div>
+
+
+
+<div class="mt-5 container">
+  <div class="row recent">
+      <span class="badge  p-3"><p class="h1"> Our recent articles </p>
+      <p class="h6">Stay informed with Our Latest Insights </p></span>
+  </div>
+</div>
+
+
+  <div class="max-w-7xl mx-auto px-4 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-5 pb-5">
+    <!-- Card 1 -->
+    {% for b in blogData %}
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <img src="{{b.blogs_img}}" alt="Water dolphin" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-2">{{b.blogs_title}}</h2>
+        <p class="text-blue-600 text-sm mb-2">{{b.blogs_area}}</p>
+        <p class="text-gray-600 mb-4">{{b.blogs_desc | safe}}</p>
+        <div class="flex items-center text-sm text-gray-400 space-x-4 mb-4">
+          <span>{{b.blogs_name}}</span>
+          <span>{{b.blogs_date}}</span>
+        </div>
+        <a href="#" class="inline-block px-6 py-2 text-blue-600 border border-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition">
+          Read more
+        </a>
+      </div>
+    </div>
+    {% endfor %} 
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

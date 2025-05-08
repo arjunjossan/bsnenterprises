@@ -1,0 +1,97 @@
+{% load static %}
+<link rel="stylesheet" href="/static/css/header.css">
+<!-- Topbar -->
+<div class="fixed-top">
+<div class="bg-dark text-white py-2 small">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div>
+      {% comment %} <i class="bi bi-telephone me-2"></i> 020-800-456-747 | {% endcomment %}
+      <marquee>{% for b in bannerData %}  {{b.banner_text | safe}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {% endfor %}</marquee>
+    </div>
+    <div>
+      <span class="me-3">
+        {% comment %} <img src="/static/image/pic.png" alt="UK" width="20" class="me-1">  {% endcomment %}
+        {% comment %} English  {% endcomment %}
+        {% comment %} <i class="bi bi-caret-down-fill small"></i> {% endcomment %}
+      </span>
+      <span>
+        {% comment %} GBP  <i class="bi bi-caret-down-fill small"></i> {% endcomment %}
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- Main Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  {% comment %} <nav class="navbar  navbar-expand-lg navbar-light bg-white shadow-sm fixed-top"> {% endcomment %}
+
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="{% url 'index' %}">
+      <img src="/static/image/logo.jpeg" alt="Logo" width="80" class="me-2">
+    </a>
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/index/' %} text-purple fw-bold {% endif %}" href="{% url 'index' %}">Home</a>
+        </li>
+        {% comment %} <li class="nav-item">
+          <a class="nav-link {% if request.path == '/products/' %} text-purple fw-bold {% endif %}" href="{% url 'products' %}">BestSellers</a>
+        </li> {% endcomment %}
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle stylish-dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Water Purifier
+          </a>
+          <ul class="dropdown-menu animated-dropdown" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i>Consulting</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-lightning-fill me-2"></i>Marketing</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-laptop-fill me-2"></i>Web Development</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-people-fill me-2"></i>About Us</a></li>
+          </ul>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle stylish-dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          CCTV Camera
+        </a>
+        <ul class="dropdown-menu animated-dropdown" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i>Consulting</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-lightning-fill me-2"></i>Marketing</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-laptop-fill me-2"></i>Web Development</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-people-fill me-2"></i>About Us</a></li>
+        </ul>
+    </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/team/' %} text-purple fw-bold {% endif %}" href="{% url 'team' %}">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/testimonials/' %} text-purple fw-bold {% endif %}" href="{% url 'testimonials' %}">Testimonials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/aboutus/' %} text-purple fw-bold {% endif %} " href="{% url 'aboutus' %}">AboutUs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/blog/' %} text-purple fw-bold {% endif %} " href="{% url 'blog_three_columns' %}">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/contact/' %} text-purple fw-bold {% endif %} " href="{% url 'contact' %}">Contact</a>
+        </li>
+      </ul>
+
+      <div class="d-flex align-items-center gap-3">
+        <a href="#" class="text-dark"><i class="bi bi-search"></i></a>
+        <a href="#" class="text-dark"><i class="bi bi-person"></i></a>
+        <a href="#" class="text-dark position-relative">
+          <i class="bi bi-cart3"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-purple"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+</div>

@@ -1,0 +1,129 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f7f5f5;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bgimage{
+    padding-top:30px;
+    background-attachment: fixed;
+    background-image:url('https://office365atwork.com/wp-content/uploads/2022/09/pexels-pixabay-315938-1024x683.jpg');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+
+  .team-section {
+    padding: 50px 20px;
+    text-align: center;
+    /* background: #282629; */
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(8, 1, 1));
+  }
+
+  .color{
+    color: white;
+  }
+
+  .team-section h1 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    font-weight: 800;
+  }
+
+  .team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .team-member {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* background: #393cf0; */
+    background-image: linear-gradient( rgba(6, 6, 6, 0), rgb(165, 165, 167));
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  }
+
+  .member-img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+
+  .member-info {
+    text-align: left;
+  }
+
+  .member-info h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .member-role {
+    margin: 5px 0;
+    color: #dcdae1;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .member-desc {
+    font-size: 0.95rem;
+    color: #6c757d;
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+
+  .social-links a {
+    color: #fceded;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+
+  .social-links a:hover {
+    color: #0d6efd;
+  }
+
+  /* Mobile Responsive */
+  @media(max-width: 768px) {
+    .team-member {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 90%;
+    }
+    .member-img {
+      margin: 0 0 15px 0;
+    }
+    .member-info {
+      text-align: center;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+

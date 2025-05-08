@@ -1,0 +1,113 @@
+
+.design{
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(185, 183, 183));
+}
+
+.bgimage{
+  background-attachment: fixed;
+  padding-top:30px;
+  background-image:url('https://www.shutterstock.com/image-vector/vector-seamless-pattern-blogging-social-600nw-434264536.jpg');
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  
+}
+
+
+.recent{
+  background-image: linear-gradient(to right, rgba(247, 244, 244, 0), rgb(1, 1, 2));
+}
+  .card-custom {
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 100%;
+    margin: 0; /* remove auto centering */
+  }
+
+  h3{
+    font-size: 50px;
+    font-style:normal;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  }
+  
+
+  .image-box {
+    position: relative;
+  }
+
+  .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .tag-box {
+    position: absolute;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    font-weight: 600;
+    animation: fadeUp 1s ease-out;
+  }
+
+  .tag1 {
+    top: 20px;
+    left: 20px;
+    border-top: 3px solid #2b68ff;
+  }
+
+  .tag2 {
+    top: 100px;
+    right: 30px;
+    border-top: 3px solid #ff6a00;
+  }
+
+  .tag3 {
+    bottom: 20px;
+    left: 50px;
+    border-top: 3px solid #f44336;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .badge-news {
+    background-color: #4f46e5;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  .read-more {
+    color: #2b68ff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .read-more:hover {
+    text-decoration: underline;
+    transform: translateX(5px);
+  }
+
+  @media (max-width: 768px) {
+    .image-box, .content-box {
+      text-align: center;
+    }
+
+    .tag-box {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+  }
+
+
+  

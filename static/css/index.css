@@ -1,0 +1,618 @@
+.slider-container {
+    width: 100%;
+    margin: 0 auto; /* center horizontally */
+    padding-top: 0px;
+}
+
+.slider-img {
+    height: 75%; 
+    object-fit: cover;
+    object-position: center;
+}
+
+/* General image responsiveness */
+.slider-img {
+  width: 100%;
+  height: auto; /* maintain aspect ratio */
+  object-fit: cover;
+}
+
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .slider-container {
+        width: 100%;
+    }
+    .slider-img {
+      height: 200px; /* or any suitable height */
+    }
+}
+
+
+
+body{
+  /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(1, 1, 1)); */
+  background-color: rgb(234, 243, 247);
+}
+
+.slides{
+  padding-top: 119px;
+}
+
+
+
+
+/* best selling section css */
+.pureit-product-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.pureit-product-card {
+  /* width: calc(33.33% - 20px); */
+  width: calc(29.33% - 20px);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pureit-image-container {
+  position: relative;
+  width: 100%;
+}
+
+.pureit-image-container img {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin-left: 45px;
+}
+
+.pureit-out-of-stock {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #74b875;
+  color: rgb(246, 249, 247);
+  font-weight: bold;
+  text-align: center;
+  padding: 3px 0;
+}
+
+.pureit-discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #4cc9a6;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 50%;
+}
+
+.pureit-content {
+  flex-grow: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pureit-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.pureit-rating {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.pureit-price {
+  margin-bottom: 10px;
+}
+
+.pureit-price .current {
+  color: #007bff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.pureit-price del {
+  color: #999;
+  margin-left: 6px;
+}
+
+.pureit-price .save {
+  color: #28a745;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.pureit-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.pureit-tag {
+  background-color: #f1f1f1;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.pureit-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.pureit-buttons button,
+.pureit-store-btn {
+  flex: 1;
+  padding: 8px;
+  font-size: 13px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.pureit-demo-btn {
+  background-color: #000;
+  color: #fff;
+}
+
+.pureit-learn-btn {
+  background-color: #fff;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.pureit-store-btn {
+  background-color: #007bff;
+  color: #fff;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .pureit-product-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .pureit-product-card {
+    width: 90vw;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .testimonial-container {
+    width: 75%; /* Take up 75% of the parent container's width */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .testimonial-container {
+        width: 95%; /* On smaller screens, take up more width */
+    }
+
+    /* Adjustments for the inner content on smaller screens */
+    .testimonial-container > div {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .testimonial-container > div > div:first-child {
+        width: 100%;
+        text-align: center; /* Center the image */
+    }
+
+    .testimonial-container > div > div:first-child img {
+        width: 100%; /* Make the image take full width */
+        max-width: 200px; /* Set a maximum width if needed */
+        height: auto;
+        margin-left: 50px;
+        margin-bottom: 10px; /* Add some space below the image */
+        border-radius: 5px;
+    }
+
+    .testimonial-container > div > div:last-child {
+        padding: 15px;
+        text-align: center; /* Center the text content */
+    }
+
+    .testimonial-container > div blockquote {
+        font-size: 1em;
+    }
+
+    .testimonial-container > div p {
+        font-size: 0.8em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* technology part  */
+.purifier-section {
+  background-color: #f2f5f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.purifier-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #001f3f;
+}
+
+.purifier-section h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 20px;
+  color: #001f3f;
+}
+
+.purifier-section p {
+  color: #7c8b9c;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.purifier-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+.purifier-card img{
+  margin-left: 135px;
+}
+
+.purifier-card:hover {
+  transform: translateY(-5px);
+}
+
+.purifier-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.explore-btn {
+  font-weight: 600;
+  color: #002e5b;
+  border: none;
+  background: none;
+}
+
+.explore-btn:hover {
+  color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .purifier-section h2 {
+    font-size: 2rem;
+  }
+  .purifier-card img{
+    margin-left: 90px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* service part  */
+.quality-service-section {
+  background-color: #d9e9f5;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.quality-service-section h2 {
+  font-size: 3.2rem;
+  color: #042c5c;
+  margin-bottom: 40px;
+  font-weight: bold;
+  animation: fadeDown 0.8s ease-out;
+}
+
+/* Flex layout for larger screens */
+.service-features {
+  display: flex;
+  justify-content: center;
+  /* gap: 20px; */
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+/* Feature Card */
+.feature {
+  background: transparent;
+  text-align: center;
+  width: 300px;
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  animation-delay: 0.2s;
+}
+
+.feature img {
+  width: 100px;
+  height: 100px;
+  padding: 18px;
+  background-color: #1e2a7c;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  margin-left: 90px;
+  animation: popIn 0.8s ease-out;
+}
+
+.feature p {
+  font-weight: bold;
+  color: #002147;
+  font-size: 1rem;
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+  .service-features {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .feature {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .feature img {
+    width: 70px;
+    height: 70px;
+    padding: 14px;
+    margin-left: 100px;
+  }
+
+  .quality-service-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+/* testimonials background image  */
+.bgimage{
+  background-attachment: fixed;
+  background-image:url('https://glassengineers.in/wp-content/uploads/2015/05/background-testimonials-1.jpg');
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+
+
+
+
+
+
+
+
+/* section of below product section of camera */
+/* body {
+  
+
+  
+} */
+
+.ai-section {
+  padding: 40px 20px;
+  /* max-width: 1200px; */
+  /* margin: auto; */
+  background: #172435;
+  color: #fff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.ai-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ai-header h2 {
+  font-size: 2rem;
+  color: #cfd2ff;
+}
+
+.ai-header h2 span {
+  color: #7d9aff;
+}
+
+.ai-header p {
+  color: #aeb7c4;
+}
+
+.ai-body {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  flex: 1;
+}
+
+/*  */
+
+
+.option {
+  background: #0a1525;
+  padding: 20px 10px;
+  border-radius: 35px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+
+.option:hover,
+.option.active {
+  background: #0e6aa9;
+  border-color: #7d9aff;
+}
+
+.ai-preview {
+  flex: 1;
+  max-width: 700px;
+}
+
+.ai-preview img {
+  width: 100%;
+  border-radius: 16px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 1;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: scale(0.97);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-body {
+    flex-direction: row; /* ✅ KEEP row on mobile too */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .option {
+    font-size: 9px; /* Smaller text for mobile */
+    padding: 5px 8px; /* Slightly tighter padding */
+  }
+  .ai-options {
+    gap: 5px;
+
+  }
+
+  .ai-header h2 {
+    font-size: 1.5rem; /* Shrink heading */
+  }
+
+  .ai-header p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

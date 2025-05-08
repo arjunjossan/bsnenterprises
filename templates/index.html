@@ -1,0 +1,382 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+
+  .explore {
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: #333;
+    border-radius: 8px;
+  }
+
+.explore:hover{
+
+  transform: scale(1.1); /* makes the button slightly larger */
+  box-shadow: 0 8px 30px rgba(22, 183, 232, 0.4); /* green shadow */
+
+}
+.purifier{
+  transition: all 0.3s ease;
+}
+
+.purifier:hover{
+  transform: scale(1.1); /* makes the button slightly larger */
+}
+
+</style>
+
+<link rel="stylesheet" href="/static/css/index.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+<div id="carouselExampleDark" class="slides carousel carousel-dark slide slider-container" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      {% for s in sliderData %}
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+      {% endfor %}
+    </div>
+  
+    <!-- Slides -->
+    <div class="carousel-inner ">
+      {% for s in sliderData %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="5000">
+          <img src="{{ s.slider_img }}" class="simage d-block h-50 slider-img" alt="{{ s.slider_title }}">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{ s.slider_title }}</h5>
+            <p>{{ s.slider_desc | safe }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+
+   <!-- Controls -->
+   <button style="padding-top:100px;" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span  class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span  class="visually-hidden ">Previous</span>
+  </button>
+
+  <button style="padding-top:100px;" class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon " aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+
+
+  {% comment %} Best Selling Section  {% endcomment %}
+
+  <div class="text-center pt-5 pb-2 text-blue-900 h1"> Best Selling Purifier</div>
+  <div class="pureit-product-section">
+
+{% for ip in purifierData %}
+    <div class="pureit-product-card purifier">
+      <div class="pureit-image-container">
+        <img src="{{ip.ip_img}}" alt="Pureit Water Purifier" />
+        <div class="pureit-out-of-stock">{{ip.ip_stock}}</div>
+        <div class="pureit-discount-badge">{{ip.ip_off}}%</div>
+      </div>
+      <div class="pureit-content">
+        <div>
+          <div class="pureit-title">{{ip.ip_title}}</div>
+          <div class="pureit-rating">⭐ {{ip.ip_rating}}/5</div>
+          <div class="pureit-price">
+            <span class="current">₹{{ip.ip_price}}</span>
+            <del>₹27,399.00</del>
+            <span class="save">(You save ₹{{ip.ip_save}})</span>
+          </div>
+          <div class="pureit-tags">
+            <div class="pureit-tag">{{ip.ip_sp1}}</div>
+            <div class="pureit-tag">{{ip.ip_sp2}}</div>
+            <div class="pureit-tag">{{ip.ip_sp3}}</div>
+          </div>
+        </div>
+        <div>
+          <div class="pureit-buttons">
+            <button class="pureit-demo-btn">BOOK DEMO</button>
+            <button class="pureit-learn-btn">Learn More</button>
+            <button class="pureit-store-btn">Store Locator</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    
+  </div>
+  <br>
+  <center><button class= " explore explore-btn p-3 rounded-3">Explore More &rarr;</button></center>
+  <br><br>
+
+
+
+
+
+
+
+    {% comment %} <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> {% endcomment %}
+    <section class="purifier-section bg-blue-100">
+      <div class="container">
+        <h2>Find the right purifier for your home</h2>
+        <p class="fw-bold fs-4 text-primary mb-5">Choose your product based on</p>
+    
+        <div class="row g-4 justify-content-center">
+          <!-- Family Size -->
+          <div class="col-md-4 col-sm-6">
+            <div class="purifier-card">
+              <img src="https://www.pureitwater.com/media/wysiwyg/Family_1.png" alt="Family" class="purifier-icon">
+              <h5>Family Size</h5>
+              <p>Choose purifier as per your family size</p>
+              <button class="explore-btn" onclick="showPrompt('Family Size')">Explore &rarr;</button>
+            </div>
+          </div>
+    
+          <!-- Water Type -->
+          <div class="col-md-4 col-sm-6">
+            <div class="purifier-card">
+              <img src="https://www.pureitwater.com/media/wysiwyg/optimized/Water.png" alt="Water" class="purifier-icon">
+              <h5>Water Type</h5>
+              <p>Choose purifier based on the source of water</p>
+              <button class="explore-btn" onclick="showPrompt('Water Type')">Explore &rarr;</button>
+            </div>
+          </div>
+    
+          <!-- Technology -->
+          <div class="col-md-4 col-sm-6">
+            <div class="purifier-card">
+              <img src="https://www.pureitwater.com/media/wysiwyg/Technology_1.png" alt="Technology" class="purifier-icon">
+              <h5>Technology</h5>
+              <p>Choose purifier based on technology</p>
+              <button class="explore-btn" id="openPrompt">Explore &rarr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+    
+
+ 
+
+    {% comment %} cctv section {% endcomment %}
+    <section class="bg-gray-900 py-12 px-4 md:px-16 text-white">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Choose your Qubo Security Camera</h2>
+    
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        {% for ic in cameraData %}
+        <!-- Card 1 -->
+        <div class="p-10 bg-black rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="relative p-6 text-center">
+            <img src="{{ic.ic_img}}" alt="Smart Cam 360" class="mx-auto relative z-10 w-40 h-40 object-contain" />
+            <p class="mt-4 text-red-400 line-through text-sm">₹{{ic.ic_strikeprice}}</p>
+            <p class="text-white text-xl font-bold">₹{{ic.ic_price}}</p>
+            <h3 class="text-lg font-semibold mt-2">{{ic.ic_title}}</h3>
+            <ul class="text-sm mt-3 space-y-1 text-left px-4">
+              <li>✅ {{ic.ic_sp1}}</li>
+              <li>✅ {{ic.ic_sp2}}</li>
+              <li>✅ {{ic.ic_sp3}}</li>
+            </ul>
+          </div>
+          <div class="flex justify-between px-6 pb-6 mt-auto gap-4">
+            <button class="flex-1 bg-gray-500 hover:bg-gray-600 text-sm py-2 rounded-full">Learn More</button>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <center><button class= " explore text-white explore-btn mt-5 p-3 rounded-3">Explore More &rarr;</button></center>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="ai-section">
+      <div class="ai-header">
+        <h2>Foolproof Security backed by <span>AI</span></h2>
+        <p>Check in on your home at the right time</p>
+      </div>
+    
+      <div class="ai-body">
+        <div class="ai-options">
+          <div class="option active" data-img="https://d29rw3zaldax51.cloudfront.net/assets/images/camera-category/foolproof_crystal_new.png">Crystal Clear Videos</div>
+          <div class="option" data-img="https://d29rw3zaldax51.cloudfront.net/assets/images/camera-category/live-monitoring-desk.png">24×7 Live Monitoring</div>
+          <div class="option" data-img="https://d29rw3zaldax51.cloudfront.net/assets/images/camera-category/person-detection-desk.png">AI Person Detection</div>
+          <div class="option" data-img="https://d29rw3zaldax51.cloudfront.net/assets/images/camera-category/smart-alert-desk.png">Smart Alerts</div>
+          <div class="option" data-img="https://d29rw3zaldax51.cloudfront.net/assets/images/camera-category/app-control-desk.png">App Control</div>
+        </div>
+    
+        <div class="ai-preview">
+          <img id="preview-img" src="https://d29rw3zaldax51.cloudfront.net/assets/images/camera-category/foolproof_crystal_new.png" alt="Preview Image">
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const options = document.querySelectorAll('.option');
+        const previewImg = document.getElementById('preview-img');
+    
+        options.forEach(opt => {
+          opt.addEventListener('click', () => {
+            options.forEach(o => o.classList.remove('active'));
+            opt.classList.add('active');
+    
+            const newSrc = opt.getAttribute('data-img');
+            previewImg.classList.remove('fade-in');
+            void previewImg.offsetWidth;
+            previewImg.setAttribute('src', newSrc);
+            previewImg.classList.add('fade-in');
+          });
+        });
+      });
+    </script>
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+<div class="quality-service-section">
+  <h2>Quality Service</h2>
+  <div class="service-features">
+    <div class="feature">
+      <img src="https://www.pureitwater.com/media/wysiwyg/Wide-service-network.png" alt="Wide Service Network" />
+      <p>Wide Service Network</p>
+    </div>
+    <div class="feature">
+      <img src="https://www.pureitwater.com/media/wysiwyg/Easy-Returns_1.png" alt="Easy Returns" />
+      <p>Easy Returns</p>
+    </div>
+    <div class="feature">
+      <img src="data:image/jpeg;base64,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" alt="Pureit Promise" />
+      <p>Technical Support</p>
+    </div>
+    <div class="feature">
+      <img src="https://www.pureitwater.com/media/wysiwyg/Free-one-year-warranty.png" alt="Free 1 Year Warranty" />
+      <p>Free 1 Year Warranty</p>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   {% comment %} other testimonial  {% endcomment %}
+   <div class="bgimage">
+    <div class="row d-flex justify-content-center pt-5">
+      <div class="col-md-10 col-xl-8 text-center">
+        <h3 class="fw-bold h3 text-white">Testimonials</h3>
+        <p class="text-white">
+          "BSN Enterprises consistently delivers top-quality
+           products with exceptional service. Their professionalism and reliability set them apart in the industry."
+        </p>
+      </div>
+    </div>
+
+
+
+ <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  {% comment %} <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div> {% endcomment %}
+  <div class="carousel-inner">
+    {% for t in testimonialData %}
+    <div class="carousel-item active">
+      <section class="py-12 px-4 md:px-16 text-white">
+        <div class="testimonial-container">
+            <div style="display: flex; color: white; font-family: sans-serif; border-radius: 10px; overflow: hidden;background-image: linear-gradient(to right, rgb(53, 33, 65),rgb(16, 16, 39));">
+                <div style="flex-shrink: 0;">
+                    <img src="{{ t.testimonial_img }}" alt="Ashok Selvan" style="width: 300px; height: 250px; display: block;">
+                </div>
+                <div style="padding: 15px;">
+                    <br><blockquote class="text-center" style="font-size: 1em; color:rgb(246, 249, 249); margin-top: 0; margin-bottom: 8px;">
+                      {{ t.testimonial_desc | safe }}<br>
+                    </blockquote>
+                    <p class="text-center" style="font-weight: bold; margin-bottom: 3px; font-size: 0.9em;">{{ t.testimonial_name }}</p>
+                    <p class="text-center" style="font-size: 0.8em; color:rgb(246, 248, 249); margin-bottom: 10px;">{{ t.testimonial_rating }}</p>
+                    <p class="text-center" style="font-size: 0.7em; color:rgb(243, 246, 247);">{{ t.testimonial_position }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    {% endfor %}
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+</div>
+    
+
+
+
+
+
+
+
+
+
+
+{% endblock  %}
+
